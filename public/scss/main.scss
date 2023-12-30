@@ -1,0 +1,45 @@
+$gradient: linear-gradient(60deg, #326CFF, #59FFB9);
+
+$tosca: #28A997;
+
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+  );
+
+  @for $i from 1 through 50 {
+    $key: $i * 0.25; // Calculate the key value
+    $spacers: map-merge($spacers, ($i: ($spacer * $key)));
+  }
+
+  $theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+  $theme-colors: map-merge($theme-colors,
+  $custom-colors: (
+    "tosca": $tosca
+  )
+);
+
+$font-weight-semibold: 600;
+
+$sizes: (
+    25: 25%,
+    40: 40%,
+    50: 50%,
+    60: 60%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+);
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
